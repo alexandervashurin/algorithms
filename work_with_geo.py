@@ -1,7 +1,6 @@
 import json
 import time
 
-
 from geopy import distance
 from functools import reduce
 
@@ -13,7 +12,6 @@ with open('russia.geo.json', 'r') as openfile:
 
     t_st_sum_all = time.perf_counter()
 
-# Спу
     def method_sum_all(flatten):
         return tuple(reduce(lambda x, y: x + y, flatten(json_object
                                                         ['features']
@@ -75,8 +73,7 @@ for i in m_ll2():
 all_time5 = time.perf_counter() - t_kms
 print("Время выполнения t_kms: " + str(all_time5) + "сек")
 
-
-print(sum(kms))
+print("Протяжённость: " + str(sum(kms)) + " км")
 
 all_time6 = time.perf_counter() - t_all
 print("Время выполнения t_all: " + str(all_time6) + "сек")
